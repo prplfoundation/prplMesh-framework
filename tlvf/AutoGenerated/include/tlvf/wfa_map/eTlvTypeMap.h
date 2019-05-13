@@ -58,6 +58,6 @@ enum eTlvTypeMap : uint16_t {
     TLV_ERROR_CODE                             = 0xa3,
 };
 
-}; // close namespace: wfa_map
+}; // namespace wfa_map
 
 #endif //_TLVF/WFA_MAP_ETLVTYPEMAP_H_

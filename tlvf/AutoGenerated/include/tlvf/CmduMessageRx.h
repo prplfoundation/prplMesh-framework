@@ -31,6 +31,6 @@ public:
     CmduMessageRx &operator=(const CmduMessageRx &) = delete;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_CmduMessageRX_H_

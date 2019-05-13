@@ -31,6 +31,6 @@ public:
     bool finalize(bool swap_needed);
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_CmduMessageTX_H_

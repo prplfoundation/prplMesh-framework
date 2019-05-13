@@ -50,6 +50,6 @@ private:
     size_t m_mac_non_1905_device_idx__ = 0;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_TLVNON1905NEIGHBORDEVICELIST_H_

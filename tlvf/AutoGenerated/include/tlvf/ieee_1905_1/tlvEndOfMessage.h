@@ -40,6 +40,6 @@ private:
     uint16_t *m_length = nullptr;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_TLVENDOFMESSAGE_H_

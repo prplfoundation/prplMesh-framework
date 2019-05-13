@@ -36,6 +36,6 @@ enum eMediaType : uint16_t {
     UNKNONWN_MEDIA                = 0xffff,
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_EMEDIATYPE_H_

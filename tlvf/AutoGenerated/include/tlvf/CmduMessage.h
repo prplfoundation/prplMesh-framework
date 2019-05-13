@@ -90,6 +90,6 @@ protected:
     static const uint16_t kTlvHeaderLength  = 4;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_CmduMessage_H_

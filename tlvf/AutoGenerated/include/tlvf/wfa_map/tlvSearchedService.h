@@ -53,6 +53,6 @@ private:
     size_t m_searched_service_list_idx__      = 0;
 };
 
-}; // close namespace: wfa_map
+}; // namespace wfa_map
 
 #endif //_TLVF/WFA_MAP_TLVSEARCHEDSERVICE_H_

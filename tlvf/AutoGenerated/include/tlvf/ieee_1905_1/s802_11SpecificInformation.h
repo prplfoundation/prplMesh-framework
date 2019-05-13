@@ -41,6 +41,6 @@ typedef struct s802_11SpecificInformation {
     void struct_init() { network_membership.struct_init(); }
 } s802_11SpecificInformation;
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_S802_11SPECIFICINFORMATION_H_

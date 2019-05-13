@@ -70,6 +70,6 @@ private:
     sFlags *m_flags              = nullptr;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_CCMDUHEADER_H_

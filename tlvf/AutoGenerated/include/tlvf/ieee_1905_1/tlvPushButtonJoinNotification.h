@@ -55,6 +55,6 @@ private:
     sMacAddress *m_iface_mac_of_new_device_joined             = nullptr;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_TLVPUSHBUTTONJOINNOTIFICATION_H_

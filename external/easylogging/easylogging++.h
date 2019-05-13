@@ -576,6 +576,7 @@ typedef std::unique_ptr<el::base::PerformanceTracker> PerformanceTrackerPtr;
 class NoCopy {
 protected:
     NoCopy(void) {}
+
 private:
     NoCopy(const NoCopy &);
     NoCopy &operator=(const NoCopy &);
@@ -624,7 +625,7 @@ public:
         return hash<el::base::type::EnumType>{}(static_cast<el::base::type::EnumType>(l));
     }
 };
-}
+} // namespace std
 namespace el {
 /// @brief Static class that contains helper functions for el::Level
 class LevelHelper : base::StaticClass {
@@ -811,9 +812,10 @@ const struct {
      "Arithemetic operation issue such as division by zero or operation resulting in overflow."},
     {SIGILL, "SIGILL", "Illegal instruction",
      "Generally due to a corruption in the code or to an attempt to execute data."},
-    {SIGSEGV, "SIGSEGV", "Invalid access to memory", "Program is trying to read an invalid "
-                                                     "(unallocated, deleted or corrupted) or "
-                                                     "inaccessible memory."},
+    {SIGSEGV, "SIGSEGV", "Invalid access to memory",
+     "Program is trying to read an invalid "
+     "(unallocated, deleted or corrupted) or "
+     "inaccessible memory."},
     {SIGINT, "SIGINT", "Interactive attention signal",
      "Interruption generated (generally) by user or operating system."},
 };
@@ -980,6 +982,7 @@ public:
     }
 
     virtual ~ScopedLock(void) { m_mutex->unlock(); }
+
 private:
     M *m_mutex;
     ScopedLock(void);
@@ -1006,6 +1009,7 @@ template <typename Mutex> class NoScopedLock : base::NoCopy {
 public:
     explicit NoScopedLock(Mutex &) {}
     virtual ~NoScopedLock(void) {}
+
 private:
     NoScopedLock(void);
 };
@@ -1019,9 +1023,11 @@ public:
     virtual inline void acquireLock(void) ELPP_FINAL { m_mutex.lock(); }
     virtual inline void releaseLock(void) ELPP_FINAL { m_mutex.unlock(); }
     virtual inline base::threading::Mutex &lock(void) ELPP_FINAL { return m_mutex; }
+
 protected:
     ThreadSafe(void) {}
     virtual ~ThreadSafe(void) {}
+
 private:
     base::threading::Mutex m_mutex;
 };
@@ -2445,6 +2451,7 @@ public:
     inline base::type::VerboseLevel verboseLevel(void) const { return m_verboseLevel; }
     inline Logger *logger(void) const { return m_logger; }
     inline const base::type::string_t &message(void) const { return m_message; }
+
 private:
     Level m_level;
     std::string m_file;
@@ -2467,6 +2474,7 @@ public:
     inline LogMessage *logMessage(void) { return &m_logMessage; }
     inline LogDispatchData *data(void) { return &m_dispatchData; }
     inline base::type::string_t logLine(void) { return m_logLine; }
+
 private:
     LogMessage m_logMessage;
     LogDispatchData m_dispatchData;
@@ -2718,6 +2726,7 @@ public:
     }
 
     bool continueRunning(void) const { return m_continueRunning; }
+
 private:
     std::condition_variable cv;
     bool m_continueRunning;
@@ -2762,6 +2771,7 @@ public:
     virtual ~IterableContainer(void) {}
     iterator begin(void) { return getContainer().begin(); }
     iterator end(void) { return getContainer().end(); }
+
 private:
     virtual Container &getContainer(void) = 0;
 };
@@ -3460,6 +3470,7 @@ public:
     void checkpoint(const std::string &id = std::string(), const char *file = __FILE__,
                     base::type::LineNumber line = __LINE__, const char *func = "");
     inline Level level(void) const { return m_level; }
+
 private:
     std::string m_blockName;
     base::TimestampUnit m_timestampUnit;
@@ -3846,6 +3857,7 @@ public:
     public:
         ScopedAddFlag(LoggingFlag flag) : m_flag(flag) { Loggers::addFlag(m_flag); }
         ~ScopedAddFlag(void) { Loggers::removeFlag(m_flag); }
+
     private:
         LoggingFlag m_flag;
     };
@@ -3854,6 +3866,7 @@ public:
     public:
         ScopedRemoveFlag(LoggingFlag flag) : m_flag(flag) { Loggers::removeFlag(m_flag); }
         ~ScopedRemoveFlag(void) { Loggers::addFlag(m_flag); }
+
     private:
         LoggingFlag m_flag;
     };

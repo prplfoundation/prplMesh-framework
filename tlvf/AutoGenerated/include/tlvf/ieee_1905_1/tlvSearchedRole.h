@@ -46,6 +46,6 @@ private:
     eValue *m_value    = nullptr;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_TLVSEARCHEDROLE_H_

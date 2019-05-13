@@ -75,6 +75,6 @@ private:
     size_t m_mac_list_idx__    = 0;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_TLVDEVICEBRIDGINGCAPABILITY_H_

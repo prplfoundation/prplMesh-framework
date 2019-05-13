@@ -115,8 +115,8 @@ private:
         uint8_t dst[ETH_ALEN]     = {0}; // destination mac address
         uint8_t src[ETH_ALEN]     = {0}; // source mac address
         uint16_t ether_type       = 0x0000;
-        struct iovec header = {.iov_base = NULL, .iov_len = 0};
-        struct iovec payload = {.iov_base = NULL, .iov_len = 0};
+        struct iovec header       = {.iov_base = NULL, .iov_len = 0};
+        struct iovec payload      = {.iov_base = NULL, .iov_len = 0};
 
         virtual std::ostream &print(std::ostream &os) const;
     };

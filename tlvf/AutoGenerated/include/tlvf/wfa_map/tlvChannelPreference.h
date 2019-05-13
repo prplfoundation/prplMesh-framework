@@ -112,6 +112,6 @@ private:
     sFlags *m_flags                = nullptr;
 };
 
-}; // close namespace: wfa_map
+}; // namespace wfa_map
 
 #endif //_TLVF/WFA_MAP_TLVCHANNELPREFERENCE_H_

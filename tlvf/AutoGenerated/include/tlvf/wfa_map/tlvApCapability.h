@@ -61,6 +61,6 @@ private:
     sValue *m_value     = nullptr;
 };
 
-}; // close namespace: wfa_map
+}; // namespace wfa_map
 
 #endif //_TLVF/WFA_MAP_TLVAPCAPABILITY_H_

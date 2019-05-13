@@ -45,6 +45,6 @@ private:
     sMacAddress *m_mac = nullptr;
 };
 
-}; // close namespace: ieee1905_1
+}; // namespace ieee1905_1
 
 #endif //_TLVF/IEEE_1905_1_TLVALMACADDRESSTYPE_H_
