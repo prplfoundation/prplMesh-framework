@@ -1,0 +1,251 @@
+#
+---
+_include: tlvf/ieee_1905_1/eWscAttributes.h
+_include: tlvf/ieee_1905_1/eWscValues8.h
+_include: tlvf/ieee_1905_1/eWscValues16.h
+_namespace: ieee1905_1
+_is_tlv_class : True
+
+tlvWscM1:
+  _type: class
+  type:
+    _type: eTlvType
+    _value_const: TLV_WSC
+  length: uint16_t
+
+  version_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_VERSION
+  version_length:
+    _type: uint16_t
+    _value_const: 1
+  version:
+    _type: eWscValues8
+    _value_const: WSC_VERSION
+
+  message_type_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_MSG_TYPE
+  message_type_length:
+    _type: uint16_t
+    _value_const: 1
+  message_type:
+    _type: eWscValues8
+    _value_const: WSC_M1
+
+  uuid_e_attr: 
+    _type: eWscAttributes
+    _value_const: ATTR_UUID_E
+  uuid_e_length: 
+    _type: uint16_t
+    _value_const: WSC_UUID_LENGTH
+  uuid_e:
+    _type: uint8_t
+    _length: [ WSC_UUID_LENGTH ]
+
+  mac_attr: 
+    _type: eWscAttributes
+    _value_const: ATTR_MAC_ADDR
+  mac_length:
+    _type: uint16_t
+    _value_const: WSC_MAC_LENGTH
+  mac:
+    _type: uint8_t
+    _length: [ WSC_MAC_LENGTH ]
+
+  enrolee_nonce_attr: 
+    _type: eWscAttributes
+    _value_const: ATTR_ENROLLEE_NONCE
+  enrolee_nonce_length:
+    _type: uint16_t
+    _value_const: WSC_NONCE_LENGTH
+  enrolee_nonce:
+    _type: uint8_t
+    _length: [ WSC_NONCE_LENGTH ]
+
+  public_key_attr: 
+    _type: eWscAttributes
+    _value_const: ATTR_PUBLIC_KEY
+  public_key_length:
+    _type: uint16_t
+    _value_const: WSC_PUBLIC_KEY_LENGTH
+    #_length_var: True
+  public_key:
+    _type: uint8_t
+    _length: [ WSC_PUBLIC_KEY_LENGTH ]
+
+  authentication_type_flags_attr: 
+    _type: eWscAttributes
+    _value_const: ATTR_AUTH_TYPE_FLAGS
+  authentication_type_flags_length: 
+    _type: uint16_t
+    _value_const: 2
+  authentication_type_flags: 
+    _type: uint16_t
+
+  encryption_type_flags_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_ENCR_TYPE_FLAGS
+  encryption_type_flags_length:
+    _type: uint16_t
+    _value_const: 2
+  encryption_type_flags:
+    _type: uint16_t
+
+  connection_type_flags_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_CONN_TYPE_FLAGS
+  connection_type_flags_length:
+    _type: uint16_t
+    _value_const: 1
+  connection_type_flags:
+    _type: eWscValues8
+    _value_const: WSC_CONN_ESS
+
+  configuration_methods_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_CONFIG_METHODS
+  configuration_methods_length:
+    _type: uint16_t
+    _value_const: 2
+  configuration_methods:
+    _type: uint16_t
+    _value_const: (WSC_CONFIG_PHY_PUSHBUTTON | WSC_CONFIG_VIRT_PUSHBUTTON)
+
+  wsc_state_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_WSC_STATE
+  wsc_state_length:
+    _type: uint16_t
+    _value_const: 1
+  wsc_state:
+    _type: eWscValues8
+    _value_const: WSC_STATE_NOT_CONFIGURED
+
+  manufacturer_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_MANUFACTURER
+  manufacturer_length:
+    _type: uint16_t
+    _value_const: WSC_MAX_NAME_LENGTH
+    #_length_var: true
+  manufacturer:
+    _type: char
+    _length: [ WSC_MAX_NAME_LENGTH ]
+
+  model_name_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_MODEL_NAME
+  model_name_length:
+    _type: uint16_t
+    _value_const: WSC_MAX_NAME_LENGTH
+    #_length_var: true
+  model_name:
+    _type: char
+    _length: [ WSC_MAX_NAME_LENGTH ]
+
+  model_number_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_MODEL_NUMBER
+  model_number_length:
+    _type: uint16_t
+    _value_const: WSC_MAX_NAME_LENGTH
+    #_length_var: true
+  model_number:
+    _type: char
+    _length: [ WSC_MAX_NAME_LENGTH ]
+
+  serial_number_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_SERIAL_NUMBER
+  serial_number_length:
+    _type: uint16_t
+    _value_const: WSC_MAX_NAME_LENGTH
+    #_length_var: true
+  serial_number:
+    _type: char
+    _length: [ WSC_MAX_NAME_LENGTH ]
+
+  primary_device_type_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_PRIMARY_DEV_TYPE
+  primary_device_type_length:
+    _type: uint16_t
+    _value_const: WSC_PRIMARY_DEV_TYPE_LENGTH
+  primary_device_type_category_id:
+    _type: uint16_t 
+  primary_device_type_oui:
+    _type: uint8_t
+    _length: [ WSC_PRIMARY_DEV_TYPE_OUI_LENGTH ]
+  primary_device_type_subcategory_id:
+    _type: uint16_t 
+
+  device_name_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_DEV_NAME
+  device_name_length:
+    _type: uint16_t
+    _value_const: WSC_MAX_NAME_LENGTH
+    #_length_var: true
+  device_name:
+    _type: char
+    _length: [ WSC_MAX_NAME_LENGTH ]
+
+  rf_bands_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_RF_BANDS
+  rf_bands_length:
+    _type: uint16_t
+    _value_const: 1
+  rf_bands:
+    _type: eWscValues8
+
+  association_state_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_ASSOC_STATE
+  association_state_length:
+    _type: uint16_t
+    _value_const: 1
+  association_state:
+    _type: eWscValues8
+    _value_const: WSC_ASSOC_NOT_ASSOC
+
+  device_password_id_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_DEV_PASSWORD_ID
+  device_password_id_length:
+    _type: uint16_t
+    _value_const: 2
+  device_password_id:
+    _type: eWscValues16
+    _value_const: DEV_PW_PUSHBUTTON
+
+  configuration_error_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_CONFIG_ERROR
+  configuration_error_length:
+    _type: uint16_t
+    _value_const: 2
+  configuration_error:
+    _type: eWscValues16
+    _value_const: WSC_CFG_NO_ERROR
+
+  os_version_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_OS_VERSION
+  os_version_length:
+    _type: uint16_t
+    _value_const: WSC_OS_VERSION_LENGTH
+  os_version:
+    _type: uint32_t
+    _value_const: 0x80000001
+
+  vendor_extensions_attr:
+    _type: eWscAttributes
+    _value_const: ATTR_VENDOR_EXTENSION
+  vendor_extensions_length:
+    _type: uint16_t
+    _value_const: WSC_VENDOR_EXTENSIONS_LENGTH
+  vendor_extensions:
+    _type: uint8_t
+    _length: [ WSC_VENDOR_EXTENSIONS_LENGTH ]
